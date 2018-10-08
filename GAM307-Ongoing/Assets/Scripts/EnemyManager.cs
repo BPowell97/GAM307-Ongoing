@@ -8,13 +8,17 @@ public class EnemyManager : MonoBehaviour {
     public GameObject Enemy2;
     public GameObject Enemy3;
     public GameObject[] enemies;
-    int maxEnemyCount = 10;
+    //int maxEnemyCount = 10;
     //int currentEnemyCount;
 
     // Use this for initialization
     void Start ()
     {
-
+        for (int i = 0; i < 5; i++)
+        {
+            Vector3 spawnPos = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+            Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, transform.rotation);
+        }
         //currentEnemyCount = 0;
         //StartCoroutine(SpawnEnemies());
 	}
@@ -30,7 +34,7 @@ public class EnemyManager : MonoBehaviour {
 
 
     
-    IEnumerator SpawnEnemies()
+    /*IEnumerator SpawnEnemies()
     {
         //transform.position = (new Vector3(Random.Range(360, 360), Random.Range(360, 360), Random.Range(360, 360))); got it wrong
 
@@ -49,7 +53,7 @@ public class EnemyManager : MonoBehaviour {
         if (currentEnemyCount < maxEnemyCount)
             StartCoroutine(SpawnEnemies());
         else
-            StopAllCoroutines();*/
+            StopAllCoroutines();
 
-    }
+    }*/
 }
