@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
+    public static int enemyCount = 0;
+
 	// Use this for initialization
 	void Start ()
     {
-        StartCoroutine(FadeMe());
+        enemyCount++;
+        Debug.Log(name + " - " + enemyCount.ToString());
+        //StartCoroutine(FadeMe());
 	}
 	
 	IEnumerator FadeMe()

@@ -9,14 +9,14 @@ public class EnemyManager : MonoBehaviour {
     public GameObject Enemy3;
     public GameObject[] enemies;
     int maxEnemyCount = 10;
-    int currentEnemyCount;
+    //int currentEnemyCount;
 
     // Use this for initialization
     void Start ()
     {
 
-        currentEnemyCount = 0;
-        StartCoroutine(SpawnEnemies());
+        //currentEnemyCount = 0;
+        //StartCoroutine(SpawnEnemies());
 	}
 	
 	// Update is called once per frame
@@ -25,6 +25,11 @@ public class EnemyManager : MonoBehaviour {
 		
 	}
 
+
+
+
+
+    
     IEnumerator SpawnEnemies()
     {
         //transform.position = (new Vector3(Random.Range(360, 360), Random.Range(360, 360), Random.Range(360, 360))); got it wrong
@@ -41,7 +46,7 @@ public class EnemyManager : MonoBehaviour {
             currentEnemyCount++;
         }
 
-        /*if (currentEnemyCount < maxEnemyCount)
+        if (currentEnemyCount < maxEnemyCount)
             StartCoroutine(SpawnEnemies());
         else
             StopAllCoroutines();*/
