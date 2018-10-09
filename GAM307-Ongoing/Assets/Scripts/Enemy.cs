@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-    public static int enemyCount = 0;
+    
     public static float rotateSpeed = 30;
 
 	// Use this for initialization
 	void Start ()
     {
-        enemyCount++;
-        Debug.Log(name + " - " + enemyCount.ToString());
+        EnemyManager.instance.enemyCount++;
+        //Debug.Log(name + " - " + enemyCount.ToString());
         //StartCoroutine(FadeMe());
 	}
 
@@ -36,8 +36,11 @@ public class Enemy : MonoBehaviour {
             yield return null;
         }
 
-        yield return new WaitForSeconds(1);
-        enemyCount--;
+        //yield return new WaitForSeconds(1);
+        EnemyManager.instance.enemyCount--;
+        EnemyManager.instance.SpawnEnemy();
+        GameManager.instance.score += 100;
         Destroy(this.gameObject);
+        
     }
 }
