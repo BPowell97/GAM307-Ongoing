@@ -5,18 +5,31 @@ using TMPro;
 
 public class UIManager : MonoBehaviour {
 
-    public TextMeshProUGUI enemyCount;
+    public TextMeshProUGUI enemyCountText;
     public TextMeshProUGUI scoreText;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    //Update is called once per frame
+
+    //void Update()
+    //{
+    //    enemyCountText.text = "Enemy Count: <color=red>" + EnemyManager.instance.enemyCount.ToString();
+    //    scoreText.text = "Score: <color=green>" + GameManager.instance.score.ToString();
+    //}
+
+    private void OnEnable()
     {
-        enemyCount.text = "Enemy Count: <color=green> " + EnemyManager.instance.enemyCount.ToString();
-        scoreText.text = "Score: <color=black> " + GameManager.instance.score.ToString();
+        GameEvents.OnEnemyDie += OnEnemyDie;
     }
+
+    private void OnDisable()
+    {
+        GameEvents.OnEnemyDie -= OnEnemyDie;
+    }
+
+    void OnEnemyDie()
+    {
+        scoreText.text = "Score: <color=green>" + GameManager.instance.score.ToString();
+        enemyCountText.text = "Enemy Count: <color=red>" + EnemyManager.instance.enemyCount.ToString();
+    }
+
 }
