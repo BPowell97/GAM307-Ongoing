@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cthulu : MonoBehaviour {
+public class Cthulu : Enemy {
 
 	// Use this for initialization
 	void Start () {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kraken : MonoBehaviour {
+public class Kraken : Enemy {
 
 	// Use this for initialization
 	void Start () {

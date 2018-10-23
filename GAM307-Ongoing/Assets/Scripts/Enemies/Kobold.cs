@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kobold : MonoBehaviour {
+public class Kobold : Enemy {
 
 	// Use this for initialization
 	void Start () {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rattata : MonoBehaviour {
+public class Rattata : Enemy {
 
 	// Use this for initialization
 	void Start () {

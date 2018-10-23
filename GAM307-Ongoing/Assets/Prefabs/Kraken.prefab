@@ -9,46 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1170250909177596}
+  m_RootGameObject: {fileID: 1725501865231120}
   m_IsPrefabAsset: 1
---- !u!1 &1170250909177596
+--- !u!1 &1725501865231120
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4264411140968098}
-  - component: {fileID: 33706364251050130}
-  - component: {fileID: 23969794770120262}
-  - component: {fileID: 136559236743589980}
-  - component: {fileID: 114523913954409996}
+  - component: {fileID: 4069720190574228}
+  - component: {fileID: 193866444477494536}
+  - component: {fileID: 33347863412206220}
+  - component: {fileID: 23708570482454988}
+  - component: {fileID: 114299313431557618}
   m_Layer: 0
-  m_Name: Enemy 3
+  m_Name: Kraken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4264411140968098
+--- !u!4 &4069720190574228
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1170250909177596}
+  m_GameObject: {fileID: 1725501865231120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.9334183, y: -1.3480024, z: -1.1328545}
+  m_LocalPosition: {x: 12.32, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23969794770120262
+--- !u!23 &23708570482454988
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1170250909177596}
+  m_GameObject: {fileID: 1725501865231120}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 78464e28cfc6b0b45841541e4ba02f80, type: 2}
+  - {fileID: 21377865764828948, guid: 77cfa9b1cc796b245a7f88d5659128ad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,40 +78,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33706364251050130
+--- !u!33 &33347863412206220
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1170250909177596}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114523913954409996
+  m_GameObject: {fileID: 1725501865231120}
+  m_Mesh: {fileID: 43479664816770658, guid: 77cfa9b1cc796b245a7f88d5659128ad, type: 2}
+--- !u!114 &114299313431557618
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1170250909177596}
+  m_GameObject: {fileID: 1725501865231120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e65afaa61a5137488682c4a362ca480, type: 3}
+  m_Script: {fileID: 11500000, guid: bf890e7a6c97c5a43a4a143374530d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 3
+  enemyType: 1
   health: 0
   speed: 0
   scoreValue: 0
   attack: 0
   defence: 0
---- !u!136 &136559236743589980
-CapsuleCollider:
+--- !u!193 &193866444477494536
+Tree:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1170250909177596}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1725501865231120}
+  m_SpeedTreeWindAsset: {fileID: 0}
+  m_TreeData: {fileID: 114775976357888850, guid: 77cfa9b1cc796b245a7f88d5659128ad,
+    type: 2}
