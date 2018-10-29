@@ -27,6 +27,7 @@ public class GameManager : Singleton<GameManager>
     {
         gameState = GameState.TITLE;
         difficulty = Difficulty.MEDIUM;
+        score = 0;
     }
 
 
@@ -54,12 +55,19 @@ public class GameManager : Singleton<GameManager>
     #region Events
     private void OnEnable()
     {
+        GameEvents.OnEnemyHit += OnEnemyHit;
         GameEvents.OnEnemyDie += OnEnemyDie;
     }
 
-    private void DisEnable()
+    private void OnDisable()
     {
+        GameEvents.OnEnemyHit -= OnEnemyHit;
         GameEvents.OnEnemyDie -= OnEnemyDie;
+    }
+
+    void OnEnemyHit(EnemyType enemyType, int scoreValue)
+    {
+        AddScore(scoreValue);
     }
 
     void OnEnemyDie()

@@ -5,12 +5,24 @@ using UnityEngine;
 public class SkeletonWarrior : Enemy {
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        Initialise();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+
+    void Initialise()
+    {
+        health = 100;
+        scoreValue = 50;
+        speed = 10;
+
+        attack = 20;
+        defence = 10;
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

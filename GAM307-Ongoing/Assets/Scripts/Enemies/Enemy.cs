@@ -33,13 +33,21 @@ public class Enemy : MonoBehaviour {
         EnemyManager.instance.enemyCount++;
 	}
 
-    void OnMouseDown()
+    public void GotHit(int baseDamage)
     {
-        StartCoroutine(Die());
+        health -= baseDamage;
+       
+        GameEvents.ReportOnEnemyHit(enemyType, scoreValue);
+
+        if (health <= 0)
+            StartCoroutine(Die());
+        
     }
 
     IEnumerator Die()
     {
+        GetComponent<Collider>().enabled = false;
+
         for (float f = 1f; f >= 0; f -= 0.01f)
         {
             Color c = GetComponent<Renderer>().material.color;

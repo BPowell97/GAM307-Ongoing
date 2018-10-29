@@ -5,12 +5,24 @@ using UnityEngine;
 public class Kobold : Enemy {
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        Initialise();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+
+    void Initialise()
+    {
+        health = 250;
+        scoreValue = 100;
+        speed = 7;
+
+        attack = 25;
+        defence = 20;
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
