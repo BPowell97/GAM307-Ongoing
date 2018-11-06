@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public enum EnemyType
 {
@@ -26,17 +28,31 @@ public class Enemy : MonoBehaviour {
     public int attack;
     public int defence;
 
+    [Header("UI Elements")]
+    public TextMeshProUGUI healthUI;
+    public Image healthBar;
+
+    public float healthBarSections;
+
 
 	
 	void Start ()
     {
         EnemyManager.instance.enemyCount++;
+         
+        
+        
 	}
 
     public void GotHit(int baseDamage)
     {
         health -= baseDamage;
-       
+
+        healthUI.text = "Health: " + health.ToString();
+
+        Vector3 temp = healthBar.transform.localScale;
+        //temp.x = healthBarSections;
+
         GameEvents.ReportOnEnemyHit(enemyType, scoreValue);
 
         if (health <= 0)
