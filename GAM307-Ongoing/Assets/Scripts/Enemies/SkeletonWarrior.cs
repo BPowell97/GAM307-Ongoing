@@ -1,13 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SkeletonWarrior : Enemy {
+
+    NavMeshAgent navAgent;
+    public GameObject target;
 
 	// Use this for initialization
 	void Start ()
     {
         Initialise();
+        navAgent = GetComponent<NavMeshAgent>();
+        navAgent.SetDestination(target.transform.position);
        
     }
 
@@ -27,7 +33,8 @@ public class SkeletonWarrior : Enemy {
     }
 
     // Update is called once per frame
-    void Update () {
-		
-	}
+    void Update ()
+    {
+		navAgent.SetDestination(target.transform.position);
+    }
 }
